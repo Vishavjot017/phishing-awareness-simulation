@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking Login - Training Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        h1 { text-align: center; }
+        .notice {
+            background: #fff3cd;
+            border: 1px solid #ffe69c;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 11px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #1769aa;
+            color: white;
+            font-size: 16px;
+        }
+        .warning {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8d7da;
+            border: 1px solid #f5c2c7;
+            border-radius: 5px;
+        }
+        .warning h2 { color: #842029; }
+        .official { background: #198754; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Online Banking Login</h1>
+
+    <div class="notice">
+        <strong>Cybersecurity Training Simulation</strong><br>
+        Do not enter real credentials.
+    </div>
+
+    <form id="loginForm" autocomplete="off">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"
+               placeholder="Enter username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"
+               placeholder="Enter password">
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div id="warning" class="warning">
+        <h2>PHISHING SIMULATION</h2>
+        <p>
+            The information you entered could have been captured and sent
+            to an attacker if this were a real phishing website.
+        </p>
+        <p>
+            Always check the website address before entering your username
+            or password.
+        </p>
+        <button type="button" class="official" id="officialButton">
+            Continue to Official Website
+        </button>
+    </div>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("warning").style.display = "block";
+    });
+
+    document.getElementById("officialButton").addEventListener("click", function() {
+        window.location.href = "https://www.example.com/";
+    });
+</script>
+</body>
+</html>
